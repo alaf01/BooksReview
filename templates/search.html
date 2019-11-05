@@ -1,0 +1,23 @@
+{% extends "logged.html" %}
+
+{% block title %}
+    Profile
+{% endblock %}
+
+{% block body %}
+<form action="{{ url_for('search') }}" method="post">
+  <div class="form-group">
+    Search for book:
+    <input type="text" name="search">
+    <br><br>
+    Choose the searching type:
+        <select name="option">
+
+             <option value="title">Title</option>
+             <option value="author">Author</option>
+             <option value="isbn">ISBN code</option>
+        </select>
+        <input type="submit" value="Search">
+  </div>
+</form>
+{% endblock %}

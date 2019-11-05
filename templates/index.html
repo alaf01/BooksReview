@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block title %}Best Book Reviews!!!{% endblock %}
+
+{% block body %}<h2>Hello dear book reader</h2>
+<h4> We are happy you are here</h4>
+<p>Have you recently read an extraordinary book?</p>
+<p>Share with us! Write a review and express yourself!</p>
+<h3>Read the other users review to find unusuall books</h3>
+<h2>Reading is more than just a book. This is the internal life, which lives inside you!</h2>
+<p>Help us to help you to find the most influential books and develope yourself! </p>
+<p>Have you read those books?</p>
+{% for book in books %}
+<p>"{{book.title}}" by {{book.author}}</p>
+{% endfor %}
+{% endblock %}d

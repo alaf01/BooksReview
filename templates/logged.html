@@ -1,0 +1,51 @@
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+    <link rel="stylesheet" href="layout.css">
+  </head>
+  <body>
+
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <!-- Brand/logo -->
+  <a class="navbar-brand" href="#"><img src="https://img.icons8.com/dusk/64/000000/book-shelf.png"></a>
+
+  <!-- Links -->
+  <ul class="navbar-nav col-sm-12">
+
+    <div class="nav nav-item col-sm-4">
+        <p class="navbar-text">Logged in as <span id="blue">{{session.get("login")}}</span></p>
+    </div>
+    <li class="nav-item">
+      <a class="nav-link" href="/">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/profile">Profile</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/review">Write a review</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/search">Find book</a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" href="/logout">Log out</a>
+    </li>
+
+  </ul>
+
+</nav>
+<div class="jumbotron text-center justify-content-center centered m-6 ">
+<h1>Best books reviews</h1>
+<hl>
+<p>...because we love reading!</p>
+</div>
+
+
+    <div class="container">
+      {% block body %}{% endblock %}
+    </div>
+  </body>
+</html>

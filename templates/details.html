@@ -1,0 +1,26 @@
+{% extends "logged.html" %}
+
+{% block title %}
+    Profile
+{% endblock %}
+
+{% block body %}
+<h2>Book title: "{{title}}"</h2>
+<h2>Book author: {{author}}</h2>
+<h2>Year of publication: {{year}}</h2>
+<h2>ISBN number: {{isbn}}</h2>
+<h2>On Goodreads this book has average rating {{res}} after {{nores}} votes. </h2>
+<br>
+<h5> Reviews: </h5>
+<hr>
+{% if isreviewed is none %}
+<p>There are no reviews for this book.</p>
+{% else %}
+{% for review in reviews %}
+<p>posted by: {{user}}<h5> {{review.review}} </h5></p>
+<hr>
+<br>
+{% endfor %}
+{% endif %}
+<a href="/review/{{isbn}}">Add review</a>
+{% endblock %}
